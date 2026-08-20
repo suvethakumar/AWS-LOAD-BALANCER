@@ -4,14 +4,14 @@
 <h1>AIM</h1>
 To use Elastic Load Balancing (ELB) and Auto Scaling services to load balance and automatically scale an AWS infrastructure.
 
-PROBLEM STATEMENT
+<h1>PROBLEM STATEMENT</h1>
 As web applications receive varying levels of traffic, a single EC2 instance cannot reliably handle sudden spikes in demand, nor can it provide fault tolerance if that instance fails. Elastic Load Balancing (ELB) solves this by automatically distributing incoming application traffic across multiple EC2 instances and Availability Zones, ensuring high availability and fault tolerance.
 
 However, load balancing alone does not solve the problem of capacity — if traffic increases beyond what the current instances can handle, more instances are needed; when traffic decreases, running excess instances wastes cost. AWS Auto Scaling addresses this by automatically launching or terminating EC2 instances based on defined conditions (such as CPU utilization), maintaining application performance while minimizing cost.
 
 This experiment demonstrates how to create a reusable Amazon Machine Image (AMI) from a running server, configure an Application Load Balancer to distribute traffic, set up a Launch Template and Auto Scaling group to automatically manage instance capacity, and use CloudWatch alarms to trigger and verify scaling behavior under load.
 
-ALGORITHM
+<h1>ALGORITHM</h1>
 Step 1: Create an AMI for Auto Scaling
 Open the EC2 console, confirm that Web Server 1 is running (2/2 status checks passed), select the instance, and choose Actions → Image and templates → Create image. Name it "WebServerAMI" and create it. This AMI will be used to launch identical instances later.
 
@@ -30,7 +30,7 @@ Lower the scaling policy's target CPU value to 50% to make scaling trigger soone
 Step 6: Terminate the Original Web Server
 Select Web Server 1 (the original instance used to create the AMI) and terminate it, since it is no longer needed once the Auto Scaling group is managing instances independently.
 
-COMMANDS
+<h1>COMMANDS</h1>
 No CLI commands are used in this experiment, as it is performed entirely through the AWS Management Console (GUI-based setup) using EC2, Elastic Load Balancing, Auto Scaling, and CloudWatch services.
 
 ```
@@ -47,5 +47,5 @@ K SUVETHA
 <img width="1902" height="799" alt="Screenshot 2026-08-20 141719" src="https://github.com/user-attachments/assets/814ad262-44bd-479a-9f06-9e6a04d09fe7" />
 
 
-RESULT
+<h1>RESULT</h1>
 Thus, an AMI was created from a running EC2 instance, a Load Balancer was configured to distribute traffic across multiple instances, an Auto Scaling group was set up with a target tracking scaling policy, and the infrastructure was verified to automatically scale out under increased load using CloudWatch alarms.
