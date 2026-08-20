@@ -1,7 +1,7 @@
 # AWS-LOAD-BALANCER
-AWS LOAD BALANCER
 
-AIM
+
+<h1>AIM</h1>
 To use Elastic Load Balancing (ELB) and Auto Scaling services to load balance and automatically scale an AWS infrastructure.
 
 PROBLEM STATEMENT
